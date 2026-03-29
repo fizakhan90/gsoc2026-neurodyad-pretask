@@ -16,14 +16,14 @@ learning, and interpreting the resulting embeddings.
 
 ## What's in This Repository
 
-- `ML4Sci(3).ipynb` — Complete Jupyter notebook containing all 
+- `ML4Sci_pretask(1).ipynb` — Complete Jupyter notebook containing all 
   code, figures, and written analysis
 
 ---
 
 ## Pipeline Summary
 
-**Part 1 — Preprocessing (MNE-Python)**
+**Part 1 : Preprocessing (MNE-Python)**
 - Loaded two raw EDF files (Listener and Speaker, 64-channel, 250Hz)
 - Segmented into positive affect (DIN1 marker 1→2) and negative affect 
   (DIN1 marker 3→end) conditions
@@ -32,7 +32,7 @@ learning, and interpreting the resulting embeddings.
 - Used ICLabel for component classification, verified through visual inspection
 - Listener: 16/20 components rejected | Speaker: 18/20 components rejected
 
-**Part 2 — CEBRA Embedding**
+**Part 2 : CEBRA Embedding**
 - Constructed T×128 joint matrix (Listener + Speaker channels)
 - Applied per-segment z-normalization after discovering ~40x variance mismatch 
   between segments
@@ -40,7 +40,7 @@ learning, and interpreting the resulting embeddings.
 - Ran shuffled-data control to test genuineness of learned structure
 - Evaluated with KNN decoding accuracy and InfoNCE loss
 
-**Part 3 & 4 — Interpretation and Reflection**
+**Part 3 & 4 : Interpretation and Reflection**
 - Analyzed embedding geometry and control results
 - Identified specific limitations of the analysis given this dataset
 
@@ -51,7 +51,7 @@ learning, and interpreting the resulting embeddings.
 - The embedding collapsed into two tight blobs rather than a continuous manifold, 
   suggesting CEBRA learned a trivial statistical separation rather than genuine 
   brain-to-brain coordination structure
-- Per-segment normalization was necessary but insufficient — the fundamental 
+- Per-segment normalization was necessary but insufficient  the fundamental 
   limitation was too few clean neural components in the Speaker (2/20 retained) 
   due to extensive speech-related muscle artifacts
 - The shuffled control confirmed minimal genuine temporal structure was learned, 
