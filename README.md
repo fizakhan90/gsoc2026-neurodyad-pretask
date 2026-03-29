@@ -49,11 +49,11 @@ learning, and interpreting the resulting embeddings.
 ## Key Findings
 
 - The embedding collapsed into two tight blobs rather than a continuous manifold, 
-  suggesting CEBRA learned a trivial statistical separation rather than genuine 
-  brain-to-brain coordination structure
+  suggesting CEBRA learned a statistical separation rather than genuine 
+  brain-to-brain coordination structure.
 - Per-segment normalization was necessary but insufficient  the fundamental 
   limitation was too few clean neural components in the Speaker (2/20 retained) 
-  due to extensive speech-related muscle artifacts
+  due to extensive speech-related muscle artifacts.
 - The shuffled control confirmed minimal genuine temporal structure was learned, 
   with near-identical InfoNCE losses (main: 5.6659 vs control: 5.6695)
 
